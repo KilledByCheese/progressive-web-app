@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  
 
   window.onload = function() {
     let message = localStorage.getItem("message") || 'Your message will display here';
@@ -14,6 +15,15 @@
     $('#display').html(message);
     localStorage.setItem("message", message);
   });
+  
+  $('#sideNavButton').click(() => {
+	  console.log('sideNavButtonClick')
+  });
+  
+  $(document).ready(() => {
+	  console.log('sidenavReady')
+	    $('.sidenav').sidenav();
+	  });
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
